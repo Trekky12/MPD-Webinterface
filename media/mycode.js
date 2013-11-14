@@ -71,7 +71,9 @@ $(document).ready(function() {
 		});
 		
 		var currentvol = parseInt($("#currentvol").text());
-		$("#currentvol").text(currentvol + VOLUPSTEPS);
+		if((currentvol + VOLUPSTEPS) <= 100){
+			$("#currentvol").text(currentvol + VOLUPSTEPS);		
+		}		
 
 	});
 
@@ -86,7 +88,8 @@ $(document).ready(function() {
 		});
 		
 		var currentvol = parseInt($("#currentvol").text());
-		$("#currentvol").text(currentvol - VOLDOWNSTEPS);
+		if((currentvol - VOLDOWNSTEPS) >= 0){
+			$("#currentvol").text(currentvol - VOLDOWNSTEPS);
+		}
 	});
  });
-
